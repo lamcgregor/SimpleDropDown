@@ -10,15 +10,17 @@
     $(classes + ' ul li ul').hide();
     $(classes + ' ul li').hover(
     	function() {
-    	$(this)
-    		.children('ul')
-            .delay(50)
-    		.stop(true,true)
-    		.slideDown('med');
+        	$(this)
+        		.children('ul')
+                .css('z-index','111')
+                .delay(50)
+        		.stop(true,true)
+        		.slideDown('med');
     	},
     	function() {
     		$(this)
                 .children('ul')
+                .css('z-index','-11')
                 .stop(true,true)
                 .delay(400)
                 .slideUp('med');
