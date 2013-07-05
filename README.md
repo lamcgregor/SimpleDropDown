@@ -8,18 +8,25 @@
 ##LESS nests selectors
 
 ```less
-nav > ul > li{
-    clear: none;
-    &:first-child {
-        margin: 0;
-    }
-    > a {
-        width: auto;
-        padding-left: 0;
-        text-align: center;
-    }
-    > ul {
-        position: relative;
+nav {
+    width: 100%;
+    height: 50px;
+    float: left;
+    ul {
+    width: 100%;
+    height: 100%;
+        li {
+            float: left
+            width: 20%;
+            margin: 10px 30px;
+            &:first-child {
+                margin: 0;
+            }
+            > a {
+                width: auto;
+                text-align: center;
+            }
+        }
     }
 }
 ```
@@ -27,20 +34,28 @@ nav > ul > li{
 Becomes:
 
 ```css
-nav > ul > li {
-    clear: none;
+nav {
+    width: 100%;
+    height: 50px;
+    float: left;
 }
-nav > ul > li:first-child {
+nav ul {
+    width: 100%;
+    height: 100%;
+}
+nav ul li {
+    float: left
+    width: 20%;
+    margin: 10px 30px;
+}
+nav ul li:first-child {
     margin: 0;
 }
-nav > ul > li > a {
+nav ul li > a {
     width: auto;
-    padding-left: 0;
     text-align: center;
 }
-nav > ul > li > ul {
-    position: relative;
-}
+
 ```
 
 ##Mixins
