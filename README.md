@@ -46,10 +46,10 @@ nav > ul > li > ul {
 ##Mixins
 
 ```less
-.box-sizing (@type: border-box) {
-    -webkit-box-sizing: @type;
-    -moz-box-sizing:    @type;
-    box-sizing:         @type;
+.box-sizing () {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
 }
 
 .box {
@@ -70,7 +70,7 @@ Outputs:
     box-sizing:         border-box;
 }
 ```
-
+-------------
 They can also take in variables
 
 ```less
@@ -111,6 +111,34 @@ body {
     background-image:         linear-gradient(to bottom, #000000, #333333);
 }
 ```
+-------------
+Can have defaults:
+
+```less
+.box-sizing (@type: border-box) {
+    -webkit-box-sizing: @type;
+    -moz-box-sizing:    @type;
+    box-sizing:         @type;
+}
+
+.box {
+    width: 20%;
+    padding: 5px;
+    .box-sizing.
+}
+```
+
+Outputs:
+
+```css
+.box {
+    width: 20%;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
+}
+```
 
 ##Functions
 
@@ -129,4 +157,26 @@ body {
 }
 ```
 
+##Colours
+
+LESS also has functions that work specifically with numbers.
+
+###darken()
+
+```less
+@color: #FFF;
+body {
+    background-color: darken(@color, 20%);
+}
+```
+
+###lighten()
+
+```less
+@color: #3F3F3F;
+body {
+    background-color: lighten(@color, 20%);
+    color: darken(@color, 20%);
+}
+```
 
