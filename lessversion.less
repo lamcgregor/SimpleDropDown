@@ -17,7 +17,7 @@
 @fullWidth: @width + @sidePadding;
 @fontSize: 100%;
 
-@primaryColor:#203550;
+@primaryColor:#530f0e;
 //#191818
 //#203550
 //#530f0e
@@ -98,6 +98,10 @@ a:hover {
 h1 {
     color: lighten(@primaryColor, 65%);
     font-size: 7rem;
+    width: 100%;
+    float:left;
+    .box-sizing;
+    padding: 0 25px;
 }
 h2 {
     color: lighten(@primaryColor, 65%);
@@ -112,15 +116,15 @@ h2 {
     float: left;
     color: lighten(@primaryColor, 50%);
     font-size: 1.4rem;
+    display:-webkit-flex;
 }
 .col {
-    float: left;
     .box-sizing;
 }
 .one {
-    width: 70%;
+    -webkit-flex:2;
     padding-right: 10px;
 }
 .two {
-    width: 30%;
+    -webkit-flex:1;
 }
