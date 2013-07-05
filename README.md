@@ -1,9 +1,9 @@
 #LESS is more
 
-1. Nested Selectors
-1. Mixins
-1. Functions
-1. Colours
+1. [Nested Selectors](#less-nests-selectors)
+1. [Mixins](#mixins)
+1. [Functions](#functions)
+1. [Colours](#colours)
 
 ##LESS nests selectors
 
