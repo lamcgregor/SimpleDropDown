@@ -3,21 +3,21 @@
 // -----------------------------------------------
 
 /* Change the following options to fit your site,
-* but you must have SASS or an equivalent SCSS compiler installed for it to do anything.
+* but you must have LESS.app or an equivalent LESS compiler installed for it to do anything.
 * If you don't understand or use LESS I highly recommend you do.
 * It makes changes like those below amazingly simple.
 */
 
 
-@width: 190px;
+@width: 220px;
 @height: 20px;
 @sidePadding: 20px;
 @topAndBottomPadding: 20px;
 @borderBottom: 2px;
 @fullWidth: @width + @sidePadding;
-@fontSize: 14px;
+@fontSize: 100%;
 
-@primaryColor:#191818;
+@primaryColor:#203550;
 //#191818
 //#203550
 //#530f0e
@@ -27,13 +27,14 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
+html {
+    font-size: @fontSize;
+}
 body {
     width: 100%;
     height: 100%;
     font-family: Georgia;
     background-color: @primaryColor;
-    font-size: @fontSize;
 }
 ul {
     margin:0;
@@ -80,7 +81,7 @@ nav > ul > li{
         position: relative;
     }
 }
-
+/* ---TEST COMMENT --- */
 a {
     text-decoration:none;
     height: @height;
