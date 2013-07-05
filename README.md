@@ -13,8 +13,8 @@ nav {
     height: 50px;
     float: left;
     ul {
-    width: 100%;
-    height: 100%;
+        width: 100%;
+        height: 100%;
         li {
             float: left
             width: 20%;
