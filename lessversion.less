@@ -1,0 +1,125 @@
+@import 'normalise.css';
+
+// -----------------------------------------------
+
+/* Change the following options to fit your site,
+* but you must have SASS or an equivalent SCSS compiler installed for it to do anything.
+* If you don't understand or use LESS I highly recommend you do.
+* It makes changes like those below amazingly simple.
+*/
+
+
+@width: 190px;
+@height: 20px;
+@sidePadding: 20px;
+@topAndBottomPadding: 20px;
+@borderBottom: 2px;
+@fullWidth: @width + @sidePadding;
+@fontSize: 14px;
+
+@primaryColor:#191818;
+//#191818
+//#203550
+//#530f0e
+
+.box-sizing() {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: Georgia;
+    background-color: @primaryColor;
+    font-size: @fontSize;
+}
+ul {
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+}
+nav {
+    width: 100%;
+    height: auto;
+    background-color: darken(@primaryColor, 10%);
+    border-bottom: @borderBottom solid lighten(@primaryColor, 40%);
+    float: left;
+    ul {
+        width: 100%;
+        li { //Styles apply to ALL list items
+            float: left;
+            width: @width + @sidePadding;
+            height: @height + (@topAndBottomPadding * 2);
+            clear: left;
+            ul {
+                li ul { //Styles apply to lists items EXCEPT the first two levels
+                    width: @width + @sidePadding;
+                    float: left;
+                    position: relative;
+                    left: @width + @sidePadding;
+                    top: -(@height + (@topAndBottomPadding * 2));
+                }
+            }
+        }
+    }
+}
+
+nav > ul > li{
+    clear: none;
+    &:first-child {
+        margin: 0;
+    }
+    > a {
+        width: auto;
+        padding-left: 0;
+        text-align: center;
+    }
+    > ul {
+        position: relative;
+    }
+}
+
+a {
+    text-decoration:none;
+    height: @height;
+    width: @width;
+    background-color: darken(@primaryColor, 10%);
+    margin:0;
+    padding: @topAndBottomPadding 0 @topAndBottomPadding @sidePadding;
+    display: block;
+    color: lighten(@primaryColor, 70%);
+}
+a:hover {
+    background-color: darken(@primaryColor,10%);
+}
+h1 {
+    color: lighten(@primaryColor, 65%);
+    font-size: 7rem;
+}
+h2 {
+    color: lighten(@primaryColor, 65%);
+}
+.darken {
+    color: lighten(@primaryColor, 60%);
+}
+.content {
+    width: 100%;
+    .box-sizing;
+    padding: 15px 25px;
+    float: left;
+    color: lighten(@primaryColor, 50%);
+    font-size: 1.4rem;
+}
+.col {
+    float: left;
+    .box-sizing;
+}
+.one {
+    width: 70%;
+    padding-right: 10px;
+}
+.two {
+    width: 30%;
+}
